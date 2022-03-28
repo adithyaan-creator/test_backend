@@ -1,0 +1,1 @@
+MODEL_PATH = "adit94/subject_classifier"
