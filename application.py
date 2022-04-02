@@ -31,14 +31,16 @@ print(str(datetime.datetime.now()) + " :: Loading data from csv file for IR comp
 for idx, row in questions_df.iterrows():
     temp_dict = {}
     temp_dict = {
-        "text": str(row['question']),
-        "chapter":str(row['CHAPTER']),
-        "class":str(row['CLASS']),
-        "custom":str(row['CUSTOM']),
-        "topic":str(row['TOPIC']),
-        "subject":str(row['SUBJECT']),
-        "bloom_taxonomy":str(row['BLOOM_TAXONOMY']),
-        "curriculum":str(row['CURRICULUM'])
+        "content": str(row['question']),
+        "meta":{
+            "chapter":str(row['CHAPTER']),
+            "class":str(row['CLASS']),
+            "custom":str(row['CUSTOM']),
+            "topic":str(row['TOPIC']),
+            "subject":str(row['SUBJECT']),
+            "bloom_taxonomy":str(row['BLOOM_TAXONOMY']),
+            "curriculum":str(row['CURRICULUM'])
+        }
     }
     all_dicts.append(temp_dict)
 
