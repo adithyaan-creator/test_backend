@@ -124,7 +124,7 @@ def bert_subject():
 
 
 @application.route("/test/recommend_subject", methods=['POST'])
-def bert_subject():
+def recommend_subject():
     if request.method == 'POST':
 
         request_data = json.loads(request.data)
