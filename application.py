@@ -25,7 +25,7 @@ application = Flask(__name__)
 all_dicts = []
 
 print(str(datetime.datetime.now()) + " :: Loading data from csv file for IR started")
-questions_df = pd.read_csv('questions_tags.csv')
+questions_df = pd.read_csv('data/questions_tags4k.csv')
 print(str(datetime.datetime.now()) + " :: Loading data from csv file for IR completed")
 
 for idx, row in questions_df.iterrows():
