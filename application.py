@@ -123,7 +123,7 @@ def bert_subject():
             status=200, mimetype="application/json")
 
 
-@app.route("/test/recommend_subject", methods=['POST'])
+@application.route("/test/recommend_subject", methods=['POST'])
 def bert_subject():
     if request.method == 'POST':
 
