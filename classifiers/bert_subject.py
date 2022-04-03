@@ -30,7 +30,7 @@ class bert_subject_classifier:
         
         '''
 
-        pred_out = self.subject_pipeline(text)
+        pred_out = self.subject_pipeline([text])
         predictions = [i['label'] for i in pred_out]
 
         out = {
