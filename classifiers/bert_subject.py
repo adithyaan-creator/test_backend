@@ -10,6 +10,8 @@ class bert_subject_classifier:
         self.model = AutoModelForSequenceClassification.from_pretrained(model_path)
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.subject_pipeline = pipeline(task='sentiment-analysis',tokenizer=self.tokenizer, model=self.model, padding=True, truncation=True)
+        self.label_mapping = {'LABEL_0':"Biology", 'LABEL_1':"Physics", 'LABEL_2':"Chemistry", 'LABEL_3':"Maths"}
+
         
     def clean_text(self, texts):
         '''
@@ -35,7 +37,7 @@ class bert_subject_classifier:
 
         out = {
             'input_text' : text,
-            'prediction' : predictions
+            'prediction' : self.label_mapping[predictions[0]]
         }
 
         return out
