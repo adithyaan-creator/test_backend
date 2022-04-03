@@ -63,8 +63,8 @@ print(str(datetime.datetime.now()) + " :: LR Model loading completed")
 
 ## Loading bert subject classifier model
 print(str(datetime.datetime.now()) + " :: Bert Model loading started")
-#bert_subject_classifier_instance = bert_subject_classifier(MODEL_PATH)
-print(str(datetime.datetime.now()) + " :: Bert Model loading started")
+bert_subject_classifier_instance = bert_subject_classifier(MODEL_PATH)
+print(str(datetime.datetime.now()) + " :: Bert Model loading completed")
 
 @application.route("/")
 def home():
@@ -113,7 +113,7 @@ def bert_subject():
         print("Questions added from request body")
         print(questions)
         
-        preds = bert_subject_classifier_instance.classify(questions)
+        #preds = bert_subject_classifier_instance.classify(questions)
         
         try:
             preds = bert_subject_classifier_instance.classify(questions)
