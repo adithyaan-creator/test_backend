@@ -110,6 +110,8 @@ def bert_subject():
         else:
             return Response(response=({'error' : "No questions provided"}), 
                             status=401, mimetype="application/json")
+        print("Questions added from request body")
+        print(questions)
         
         try:
             preds = bert_subject_classifier_instance.classify(questions)
