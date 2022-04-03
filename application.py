@@ -12,7 +12,7 @@ from haystack.pipeline import DocumentSearchPipeline
 from flask import Flask, request, Response, render_template
 
 from config import *
-#from classifiers.bert_subject import bert_subject_classifier
+from classifiers.bert_subject import bert_subject_classifier
 #from flask_cors import CORS
 #from flask_ngrok import run_with_ngrok
 
