@@ -113,6 +113,8 @@ def bert_subject():
         print("Questions added from request body")
         print(questions)
         
+        preds = bert_subject_classifier_instance.classify(questions)
+        
         try:
             preds = bert_subject_classifier_instance.classify(questions)
         except :
