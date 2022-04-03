@@ -123,7 +123,7 @@ def bert_subject():
 
         print("Number of samples to predict :: " + str(len(questions)))
 
-        return Response(response= json.dumps({'message' : "Done", 'preds' : list(preds)}),
+        return Response(response= json.dumps({'message' : "Done", 'preds' : (preds)}),
             status=200, mimetype="application/json")
 
 
