@@ -5,7 +5,7 @@ import requests
 import pickle
 import pandas as pd
 
-from haystack.document_stores import InMemoryDocumentStore
+from haystack.document_stores import ElasticsearchDocumentStore
 from haystack.nodes import TfidfRetriever
 from haystack.pipeline import DocumentSearchPipeline
 
@@ -44,7 +44,7 @@ for idx, row in questions_df.iterrows():
     }
     all_dicts.append(temp_dict)
 
-document_store = InMemoryDocumentStore()
+document_store = ElasticsearchDocumentStore()
 print(str(datetime.datetime.now()) + "InMemory Document Store initialized")
 document_store.write_documents(all_dicts)
 print(str(datetime.datetime.now()) + "InMemory Document Store data loading complete")
